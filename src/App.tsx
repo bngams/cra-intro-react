@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ScrollTo from './components/ui/scroll-to/ScrollTo';
 import Header from './components/layout/header/Header';
+import Footer from './components/layout/footer/Footer';
 
 function App() {
 
@@ -30,11 +31,8 @@ function App() {
           <p>Nemo aspernatur ipsam ipsum et. Officia rem saepe autem perspiciatis repellendus nam molestias minus earum provident! Numquam omnis facere harum ducimus eveniet veritatis aspernatur? At voluptate laboriosam quibusdam, eos illo temporibus maiores dignissimos quaerat voluptatem in iure voluptas repellat aut a sit neque ex inventore consequuntur est impedit perferendis quae eveniet consectetur! Quis, veniam. Eaque veritatis, porro iure neque debitis iste beatae obcaecati perferendis recusandae accusantium cupiditate asperiores, explicabo dolorem architecto natus distinctio tempore. Fugit excepturi ipsa totam itaque quasi dolor eaque maiores placeat, repellat enim a sequi, exercitationem doloribus impedit numquam. Ad tempora velit consequuntur dolorum aspernatur, aliquam corporis, quam blanditiis, in alias quis inventore quasi ducimus! Quo tenetur tempore unde ea similique magnam consectetur facere minima odio nam? Minima obcaecati dolor laudantium minus. Doloribus ipsam repudiandae soluta adipisci? Ratione adipisci eum dicta dolore corporis autem dolor. Animi doloribus eum quo cumque soluta ab consequatur quidem illum, suscipit vitae. Eum fuga natus at est? Tenetur possimus laudantium cum iste esse totam itaque, quas voluptate non. Voluptatem cumque enim eligendi nam facilis et beatae iusto fuga consequuntur natus a voluptatum quidem harum soluta aspernatur numquam qui, voluptate quibusdam deleniti, repellat explicabo? Dicta id quis nobis dolores culpa, corrupti quod sit!</p>
         </div> 
       </div>
-      <footer className="my-footer">
-        <div className="container">
-          <span>Let's build something cool</span>
-        </div>
-      </footer>
+      {/* Use a Footer custom component */}
+      <Footer />
     </div>
   );
 }
