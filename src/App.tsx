@@ -2,6 +2,7 @@ import React, { MutableRefObject, useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ScrollTo from './components/ui/scroll-to/ScrollTo';
+import Header from './components/layout/header/Header';
 
 function App() {
 
@@ -11,11 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      <header className="my-header">
-        <div className="container">
-          <span className="my-header-tile">My first React App</span>
-        </div>
-      </header>
+      {/* Use a Header custom component */}
+      <Header />
       <div className="my-content">
         <div id="intro" className="center" ref={introRef}>
           <h1>My super brand!</h1>
