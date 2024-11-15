@@ -1,19 +1,13 @@
 import React, { MutableRefObject, useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ScrollTo from './components/ui/scroll-to/ScrollTo';
 
 function App() {
 
   // Create refs for sections
   const introRef = useRef(null);
   const goFurtherRef = useRef(null);
-
-  // Function to scroll to a specific section
-  const scrollTo = (element: MutableRefObject<HTMLElement | null>)=> {
-    if (element.current) {
-      element.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="App">
@@ -29,10 +23,7 @@ function App() {
           <br />
           <button>Buy products</button>
           <br />
-          <a href="#go-further" onClick={(e) => {
-            e.preventDefault(); // avoid href behaviour
-            scrollTo(goFurtherRef);
-          }}>Continue</a>
+          <ScrollTo target={goFurtherRef} className='link'>Continue</ScrollTo>
         </div> 
         <div id="go-further" className="container center" ref={goFurtherRef}>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aliquid id dignissimos iure quos illo ea porro, optio non perferendis dolore excepturi molestiae doloribus itaque quisquam, possimus ipsa at quasi illum quidem natus ex. Repudiandae molestiae itaque, dolorem nisi temporibus ea sapiente alias? Omnis, impedit. Quae dignissimos quod optio recusandae voluptatibus tenetur! Modi dolorem perspiciatis odio tempora rem nisi consectetur, earum praesentium autem voluptatum expedita doloremque inventore dolore ab, quisquam, voluptates unde alias exercitationem blanditiis. Quidem dicta alias, qui cupiditate ipsa illo deserunt magni molestias numquam eveniet, assumenda maxime est veniam labore temporibus minima officiis facilis cum voluptatum rerum eum reiciendis. Voluptatem voluptates soluta in excepturi, quasi distinctio tenetur officia, nam doloribus obcaecati reiciendis nesciunt odit pariatur voluptas corporis ipsam enim illo. Voluptas adipisci fugiat ducimus optio sint. Dignissimos velit pariatur, neque atque illo nemo exercitationem magnam laudantium? Mollitia voluptatibus quaerat nostrum ipsa facere excepturi dolorem blanditiis eveniet amet rem expedita totam, facilis et explicabo similique modi fuga repellendus accusamus adipisci temporibus architecto laboriosam maiores sint fugit. Harum illo vero dolores dolore distinctio perspiciatis aliquam repellat! Cum soluta excepturi omnis commodi blanditiis libero numquam deserunt ut beatae dolores iusto illo temporibus ipsum, explicabo similique quasi repellendus consequatur cumque modi eius!</p>
