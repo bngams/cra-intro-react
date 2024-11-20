@@ -1,27 +1,32 @@
-import React, { ReactNode, MutableRefObject } from 'react';
-import './ScrollTo.css'; // Create a CSS file for styles
+import React, { MutableRefObject, ReactNode } from "react";
+import './ScrollTo.css'
 
-interface ScrollToProps {
-  target: MutableRefObject<HTMLElement | null>;
-  children: ReactNode; // Content of the component, e.g., button or link text
-  className?: 'link' | 'button' | string; // Optional custom class for styling
-}
+type ScrollToProps = {
+  selector?: string;
+  targetRef?: MutableRefObject<HTMLElement | null>;
+  children: ReactNode;
+  className: 'link' | 'button' | string;
+} 
 
-const ScrollTo: React.FC<ScrollToProps> = ({ target, children, className }) => {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent default behavior (e.g., for links)
-    if (target.current) {
-      target.current.scrollIntoView({ behavior: 'smooth' });
+function ScrollTo({selector, targetRef, children, className}: ScrollToProps) {
+  const defaultBehaviour = { behavior: 'smooth' } as ScrollIntoViewOptions; // TODO: as component param
+
+  // function
+  const scrollTo = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    if(selector){ 
+      const element = document.querySelector(selector);
+      element?.scrollIntoView(defaultBehaviour);
     }
-  };
+    if(targetRef) {
+      targetRef.current?.scrollIntoView(defaultBehaviour)
+    } 
+  } 
 
-  // if no valid href anchor, we need to use a button 
-  // see: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/main/docs/rules/anchor-is-valid.md
-  return ( 
-    <button className={`scroll-to ${className}`} onClick={handleClick}>
-      {children}
-    </button>
+  return (
+    <button className={`scroll-to ${className}`} onClick={scrollTo}>{children}</button>
   );
-};
+} 
 
 export default ScrollTo;
