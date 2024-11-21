@@ -5,7 +5,6 @@ import Footer from './components/layout/footer/Footer';
 import Home from './pages/home/Home';
 
 function App() {
-
   return (
     <div className="App">
       {/* Use a Header custom component */}
