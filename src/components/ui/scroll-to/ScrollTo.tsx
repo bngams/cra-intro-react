@@ -15,7 +15,7 @@ function ScrollTo({selector, targetRef, children, className}: ScrollToProps) {
   const scrollTo = (e: React.MouseEvent) => {
     e.preventDefault();
     
-    if(selector){ 
+    if(selector) { 
       const element = document.querySelector(selector);
       element?.scrollIntoView(defaultBehaviour);
     }
